@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Astronomy Club Membership Form</title>
+</head>
+
+<body>
+    <form id="astroForm" onsubmit="return validateForm()" action="mailto:shawn.101@hotmail.co.uk" method="post" enctype="text/plain">
+        <!-- Text Fields -->
+        First Name: <input type="text" id="firstName" name="firstName"><br>
+        Last Name: <input type="text" id="lastName" name="lastName"><br>
+        Email Address: <input type="text" id="email" name="email"><br>
+
+        <!-- Text Area for Address -->
+        Home Address: <br>
+        <textarea id="homeAddress" name="homeAddress"></textarea><br>
+
+        <!-- Checkboxes for Planets -->
+        Which planets have you seen?<br>
+        <input type="checkbox" id="Mercury" value="Mercury" name="planet">Mercury<br>
+        <input type="checkbox" id="Venus" value="Venus" name="planet">Venus<br>
+        <input type="checkbox" id="Mars" value="Mars" name="planet">Mars<br>
+        <input type="checkbox" id="Jupiter" value="Jupiter" name="planet">Jupiter<br>
+        <input type="checkbox" id="Saturn" value="Saturn" name="planet">Saturn<br>
+        <input type="checkbox" id="Uranus" value="Uranus" name="planet">Uranus<br>
+        <input type="checkbox" id="Neptune" value="Neptune" name="planet">Neptune<br>
+        <input type="checkbox" id="None" value="None" name="planet">None<br>
+
+        <!-- Radio Buttons for Age Group -->
+        Age of Membership:<br>
+        <input type="radio" name="ageGroup" value="Child">Child (<18)<br>
+        <input type="radio" name="ageGroup" value="Adult">Adult<br>
+        <input type="radio" name="ageGroup" value="Senior">Senior (>65)<br>
+
+        <!-- Select Dropdown for Country -->
+        Country:
+        <select id="country" name="country">
+            <option value="notSelected">--Not Selected--</option>
+            <option value="England">England</option>
+            <option value="Wales">Wales</option>
+            <option value="Scotland">Scotland</option>
+            <option value="Northern Ireland">Northern Ireland</option>
+        </select><br>
+
+        <!-- Submit Button -->
+        <input type="submit" value="Submit">
+    </form>
+
+    <script>
+        function validateForm() {
+            // Simple validation for each field
+            if (document.getElementById("firstName").value == "") {
+                alert("Please enter your first name.");
+                return false;
+            }
+
+            if (document.getElementById("lastName").value == "") {
+                alert("Please enter your last name.");
+                return false;
+            }
+
+            if (document.getElementById("email").value == "") {
+                alert("Please enter your email.");
+                return false;
+            }
+
+            if (document.getElementById("homeAddress").value == "") {
+                alert("Please enter your home address.");
+                return false;
+            }
+
+            if (document.getElementById("country").value == "notSelected") {
+                alert("Please select a country.");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</body>
+
+</html>
